@@ -1,51 +1,40 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import CreateListing from './pages/CreateListing';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminRegister from './pages/AdminRegister';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        await fetch("http://localhost:3000/users/")
-          .then(async (response) => {
-            const json = await response.json()
-            console.log(json)
-            // response.json
-          })
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
-    fetchData()
-  }, [])
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      <div style={{ paddingTop: '100px' }}>
+        <Routes>
+         <Route path="/" element={<Home />} />
+         <Route path="/products" element={<Products />} />
+         <Route path="/cart" element={<Cart />} />
+         <Route path="/create-listing" element={<CreateListing />} />
+         <Route path="/admin-login" element={<AdminLogin />} /> 
+         <Route path="/create-listing" element={<CreateListing />} />
+         <Route path="/login" element={<Login />} />
+         <Route path="/signup" element={<Signup />} />
+         <Route path="/create-listing" element={<CreateListing />} />
+         <Route path="/admin" element={<AdminLogin />} />
+         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+         <Route path="/admin-register" element={<AdminRegister />} />
+</Routes>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
