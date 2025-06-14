@@ -47,3 +47,9 @@
 .product-card button:hover {
   background-color: #246a44;
 }
+.products-page input,
+.products-page select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}

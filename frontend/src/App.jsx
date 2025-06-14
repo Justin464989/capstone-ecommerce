@@ -10,7 +10,7 @@ import Signup from './pages/Signup';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminRegister from './pages/AdminRegister';
-
+import AdminForgotPassword from './pages/AdminForgotPassword';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
          <Route path="/create-listing" element={<CreateListing />} />
          <Route path="/admin" element={<AdminLogin />} />
          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin-forgot-password" element={<AdminForgotPassword />} />
          <Route path="/admin-register" element={<AdminRegister />} />
 </Routes>
 
